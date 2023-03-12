@@ -1,0 +1,86 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<Konu>
+@inject SignInManager<Uye> SignInManager
+<head>
+    <meta charset="utf-8">
+    <title>MEDINOVA - Hospital Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<!-- Blog Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+            <h1 class="display-4">Son Konular</h1>
+        </div>
+        <div class="row g-5">
+
+
+@foreach(Konu konu in Model)
+                {
+                                           <div class="col-xl-4 col-lg-6">
+  <a asp-action="Detay" asp-route-id="@konu.KonuID">
+
+
+
+                        <div class="bg-light rounded overflow-hidden">
+
+                            <img src="~/KapakResimleri/@konu.KapakResmi" >
+                            <div class="p-4">
+                                <a class="h3 d-block mb-3" href="">@konu.KonuAdi</a>
+                                <p class="m-0">
+                                    @konu.Yazar
+                                </p>
+                            </div>
+                            <div class="d-flex justify-content-between border-top p-4">
+
+                                <div class="d-flex align-items-center">
+                                    <small class="ms-3"><i class="far fa-eye text-primary me-1"></i>12345</small>
+                                    <small class="ms-3"><i class="far fa-comment text-primary me-1"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+}
+
+            </div>
+        </div>
+    </div>
+    <!-- Blog End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="~/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="~/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/js/main.js"></script>
+</body>

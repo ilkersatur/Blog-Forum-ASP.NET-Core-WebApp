@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebApp.Models.Konu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KapakResmi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KonuAdi)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.Yazar)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <img src="/KapakResimleri/@item.KapakResmi" width="50px" height="70px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KonuAdi)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Yazar.YazarAdi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.KonuID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.KonuID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.KonuID">Delete</a>|
+                    <a asp-action="KategoriEkle" asp-route-id="@item.KonuID">Kategori Ekle</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

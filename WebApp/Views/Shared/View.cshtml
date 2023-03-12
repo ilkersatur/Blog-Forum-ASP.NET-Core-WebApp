@@ -1,0 +1,23 @@
+﻿@using WebApp.DAL;
+@using Microsoft.EntityFrameworkCore;
+@using Microsoft.AspNetCore.Identity;
+
+@inject BlogDB db;
+@inject UserManager<Uye> UserManager;
+@inject SignInManager<Uye> SignManager;
+
+@{
+
+    if (SignManager.IsSignedIn(User))
+    {
+        int uyeID = int.Parse(UserManager.GetUserId(User));
+
+<table class="table">
+    <thead>
+
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+    }
+}

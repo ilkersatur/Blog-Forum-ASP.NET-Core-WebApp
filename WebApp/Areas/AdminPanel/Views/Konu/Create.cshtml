@@ -1,0 +1,68 @@
+﻿@model WebApp.Models.Konu
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Konu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KonuAdi" class="control-label"></label>
+                <input asp-for="KonuAdi" class="form-control" />
+                <span asp-validation-for="KonuAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YazarID" class="control-label"></label>
+                <select asp-for="YazarID" class ="form-control" asp-items="ViewBag.YazarID" data-val-required="yazar secilmeli...">
+                    <option value="0">Seciniz...</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Yazi" class="control-label"></label>
+                <input asp-for="Yazi" class="form-control" />
+                <span asp-validation-for="Yazi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KapakResmi" class="control-label"></label>
+                <input asp-for="KapakResmi" class="form-control" type="hidden" value="bos.jpg" />
+                <input name="Kapak_Resmi" class="form-control" type="file" />
+                <span asp-validation-for="KapakResmi" class="text-danger"></span>
+            </div>
+
+
+            <br />
+            <div class="form-group">
+                @foreach(Kategori item in ViewBag.Kategoriler)
+                {
+                    <input type="checkbox" name="kategori" value="@item.KategoriID"/>@item.KategoriAdi
+
+                }
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+@Html.ValidationSummary()
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

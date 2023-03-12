@@ -1,0 +1,96 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model WebApp.Models.Konu
+@inject SignInManager<Uye> SignInManager
+
+@{
+    ViewData["Title"] = "Detay";
+}
+
+<h1>Detay</h1>
+
+<div>
+    <h4>Konu</h4>
+    <hr />
+    <table>
+        <tr>
+            <td width="350px">
+                <img src="~/KapakResimleri/@Model.KapakResmi" width="200px"/>
+            </td>
+            <td>
+       
+        
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KonuAdi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KonuAdi)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Yazi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Yazi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EklendigiTarih)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EklendigiTarih)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Yazar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Yazar.YazarAdi)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kategoriler)
+        </dt>
+        <dd class="col-sm-10">
+            <ul>
+            @foreach(Konu_Kategori kat in ViewBag.kategoriler)
+            {
+                    <li>@kat.Kategori.KategoriAdi</li>
+                }
+            </ul>
+            
+        </dd>
+
+    </dl>
+            </td>
+        </tr>
+    </table>
+</div>
+
+@*Yorum Ekleme*@
+<div>
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-action = "YorumEkle" asp-controller = "Uye" asp-area="UyePanel" >
+        <textarea name = "mesaj" cols = "80" rows = "3" ></textarea>
+            <input type="hidden" name="konuID" value="@Model.KonuID" />
+       <input type = "submit" value = "Yorum Gönder" />
+    </form>
+ }
+ </div>
+ <table>
+    @foreach (var yorum in (ICollection<Yorum>)ViewBag.yorumlar)
+    {
+        <tr>
+            <td><b>@yorum.Uye.Ad @yorum.Uye.Soyad</b></td>
+            <td>@yorum.Mesaj</td>
+            <td>@yorum.YorumTarih</td>
+
+        </tr>
+    }
+</table>
+
+
+
+<div>
+
+    <a asp-action="Index">Back to List</a>
+</div>

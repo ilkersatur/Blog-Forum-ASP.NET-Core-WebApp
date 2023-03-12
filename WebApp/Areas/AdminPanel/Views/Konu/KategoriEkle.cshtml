@@ -1,0 +1,45 @@
+﻿@model WebApp.Models.Konu_Kategori
+
+@{
+    ViewData["Title"] = "KategoriEkle";
+}
+
+<h1>Var olan Kategoriler</h1>
+<ul>
+    @foreach(Konu_Kategori kk in ViewBag.Kategoriler)
+    {
+        <li>@kk.Kategori.KategoriAdi</li>
+    }
+</ul>
+
+<h1>KategoriEkle</h1>
+
+<h4>Konu_Kategori</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="KategoriEkle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="KonuID" class="control-label"></label>
+                <select asp-for="KonuID" class="form-control" asp-items="ViewBag.KonuID"></select>
+               
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriID" class="control-label"></label>
+                <select asp-for="KategoriID" class ="form-control" asp-items="ViewBag.KategoriID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
