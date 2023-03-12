@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity;
 @model IEnumerable<Konu>
 @inject SignInManager<Uye> SignInManager
-<head>
+@*<head>
     <meta charset="utf-8">
     <title>MEDINOVA - Hospital Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -42,9 +42,6 @@
                 {
                                            <div class="col-xl-4 col-lg-6">
   <a asp-action="Detay" asp-route-id="@konu.KonuID">
-
-
-
                         <div class="bg-light rounded overflow-hidden">
 
                             <img src="~/KapakResimleri/@konu.KapakResmi" >
@@ -65,7 +62,6 @@
                         </a>
                     </div>
 }
-
             </div>
         </div>
     </div>
@@ -83,4 +79,271 @@
 
     <!-- Template Javascript -->
     <script src="~/js/main.js"></script>
+</body>*@
+
+
+
+
+
+
+<head>
+
+
+    <link rel="stylesheet" href="~/evonyee/css/bootstrap.min.css" />
+    <!-- site css -->
+    <link rel="stylesheet" href="~/evonyee/css/style.css" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="~/evonyee/css/responsive.css" />
+    <!-- colors css -->
+    <link rel="stylesheet" href="~/evonyee/css/colors.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="~/evonyee/css/custom.css" />
+    <!-- wow animation css -->
+    <link rel="stylesheet" href="~/evonyee/css/animate.css" />
+    <!-- Revolution Loaling Fonts and Icons  -->
+    <link rel="stylesheet" href="~/evonyee/js/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <!-- Revolution style Sheets  -->
+    <link rel="stylesheet" href="~/evonyee/js/revolution/css/settings.css">
+    <link rel="stylesheet" href="~/evonyee/js/revolution/css/layers.css">
+    <link rel="stylesheet" href="~/evonyee/js/revolution/css/navigation.css">
+    <!-- owl stylesheets -->
+    <link rel="stylesheet" href="~/evonyee/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/evonyee/css/owl.theme.default.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body id="default_theme" class="home_page1">
+    <!-- header -->
+    <div id="mySidenav" class="sidenav">
+        <ul class="menu_sidebar">
+            <li><a href="~/evonyee/javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+            <li><a href="~/evonyee/index.html">01. Home</a></li>
+            <li><a href="~/evonyee/about.html">02. About</i></a></li>
+            <li><a href="~/evonyee/what_we_do.html">03. What we do</a></li>
+            <li><a href="~/evonyee/testimonial.html">04. Testimonial</a></li>
+            <li><a href="~/evonyee/contact.html">05. Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Start Banner Slider -->
+    <div class="banner-slider">
+        <div class="container-fluid">
+            <div class="row">
+                <div id="slider_main" class="carousel slide" data-ride="carousel">
+                    <!-- The slideshow -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="full">
+                                <div class="left_blog_top">
+                                    <h3>Decorate<br>Service</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+                                    <a class="bt_main" href="contact.html">Contact Us</a>
+                                </div>
+                                <div class="right_blog_top">
+                                    <img src="~/evonyee/img/slide1_right.png" alt="#" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="full">
+                                <div class="left_blog_top">
+                                    <h3>Decorate<br>Service</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+                                    <a class="bt_main" href="contact.html">Contact Us</a>
+                                </div>
+                                <div class="right_blog_top">
+                                    <img src="~/evonyee/img/slide1_right.png" alt="#" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide_arrow">
+                        <span>
+                            <a class="carousel-control-prev" href="#slider_main" data-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#slider_main" data-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Banner Slider -->
+
+    <!-- section -->
+    <section class="layout_padding about_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-7 p-relative r-left">
+                                <div class="full back_blog text_align_center padding_right_left_15">
+                                    <img src="~/evonyee/images/about_img.png" alt="#" />
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="full heading_s1">
+                                    <h3>About</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum..</p>
+                                </div>
+                                <div class="full">
+                                    <a class="read_more_bt" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- section -->
+    <section class="layout_padding design_layout">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="full">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="full heading_s1">
+                        <h3>Best<br>Decorating for<br>Your home</h3>
+                        <p>adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </p>
+                    </div>
+                    <div class="full">
+                        <a class="read_more_bt" href="#">Get A Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- section -->
+    <section class="layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full heading_s1">
+                        <h3>Son Gönderiler</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+            @foreach(Konu konu in Model)
+            {
+
+
+                <div class="col-md-6">
+                    <a asp-action="Detay" asp-route-id="@konu.KonuID">
+                    <div class="blog_style">
+                        <div class="full news_blog">
+                                <img src="~/KapakResimleri/@konu.KapakResmi" width="300px" height="300px"/>
+                        </div>
+                        <div class="full post_colum">
+                        </div>
+                        <div class="full">
+                            <h3>@konu.KonuAdi</h3>
+                            <p>@konu.EklendigiTarih</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+            }
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- end section -->
+    <!-- section -->
+    <section class="layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full heading_s1">
+                        <h3>Request A Call Back</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="#">
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="full fieldset_blog">
+                                        <input type="text" placeholder="Your Name" name="name" />
+                                    </div>
+                                    <div class="full fieldset_blog">
+                                        <input type="text" placeholder="Phone Number" name="phone_no" />
+                                    </div>
+                                    <div class="full fieldset_blog">
+                                        <input type="email" placeholder="email" name="email" />
+                                    </div>
+                                    <div class="full fieldset_blog">
+                                        <textarea placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="full fieldset_blog center">
+                                        <button>Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-md-6 p-relative">
+                    <div class="full back_blog">
+                        <img class="img-responsive" src="~/evonyee/images/call_back.png" alt="#" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- cpy -->
+    <div class="cpy">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full center">
+                        <ul class="social_icon">
+                            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="full text_align_center">
+                        <p>© 2020 All Rights Reserved. <a href="https://html.design">html.design</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end cpy -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript) -->
+    <script src="~/evonyee/js/jquery.min.js"></script>
+    <script src="~/evonyee/js/popper.min.js"></script>
+    <script src="~/evonyee/js/bootstrap.min.js"></script>
+    <!-- javascript -->
+    <script src="~/evonyee/js/owl.carousel.js"></script>
+    <!-- wow animation -->
+    <script src="~/evonyee/js/wow.js"></script>
+    <!-- menumaker -->
+    <script src="~/evonyee/js/menumaker.js"></script>
+    <!-- custom js -->
+    <script src="~/evonyee/js/custom.js"></script>
 </body>

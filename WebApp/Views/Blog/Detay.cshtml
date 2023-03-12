@@ -8,62 +8,45 @@
 
 <h1>Detay</h1>
 
-<div>
-    <h4>Konu</h4>
-    <hr />
-    <table>
-        <tr>
-            <td width="350px">
-                <img src="~/KapakResimleri/@Model.KapakResmi" width="200px"/>
-            </td>
-            <td>
-       
-        
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.KonuAdi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.KonuAdi)
-        </dd>
 
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Yazi)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Yazi)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EklendigiTarih)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EklendigiTarih)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Yazar)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Yazar.YazarAdi)
-        </dd>
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Kategoriler)
-        </dt>
-        <dd class="col-sm-10">
-            <ul>
-            @foreach(Konu_Kategori kat in ViewBag.kategoriler)
-            {
-                    <li>@kat.Kategori.KategoriAdi</li>
-                }
-            </ul>
-            
-        </dd>
+<section class="layout_padding about_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-7 p-relative r-left">
+                            <div class="full back_blog text_align_center padding_right_left_15">
+                                <img class="resim" src="~/KapakResimleri/@Model.KapakResmi" width="500px" />
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="full heading_s1">
+                                <h3>@Model.KonuAdi</h3>
+                                <p>@Model.Yazi</p>
+                                <p>Yazar : @Model.Yazar.YazarAdi</p>
+                                <p>Eklenme Tarihi : @Model.EklendigiTarih</p>
+                                <br />
+                                <lu>Kategori</lu>
+                                <ul>
+                                    @foreach (Konu_Kategori kat in ViewBag.kategoriler)
+                                    {
 
-    </dl>
-            </td>
-        </tr>
-    </table>
-</div>
+                                        <li>@kat.Kategori.KategoriAdi</li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<h4>Yorumlar</h4>
 
 @*Yorum Ekleme*@
 <div>
@@ -88,7 +71,7 @@
     }
 </table>
 
-
+<br /><br />
 
 <div>
 
